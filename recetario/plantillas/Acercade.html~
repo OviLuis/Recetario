@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% comment %} Django es muy bueno {% endcomment %}
+
+{% block titulo %} Acerca de {% endblock %}
+
+{% block style_css %}{% endblock %}
+
+{% block encabezado %}{% endblock %}
+
+{% block contenido %}
+	<h1>Nosotros somos los que somos, y punto</h1>
+{% endblock %}

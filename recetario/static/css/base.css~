@@ -1,0 +1,127 @@
+*{
+	margin: 0;
+	padding:0;
+}	
+
+body{
+	text-align: center;
+}	
+
+header, nav, section, aside, footer, figure{
+	display: block;
+	
+}
+
+#contenedor{
+	width: 960px; 	
+	text-align: left;
+	margin: 15px auto;
+}
+
+#cabecera{
+	background-color:  #ef9509;
+	border: 1px solid #999999;
+	padding: 10px;
+}
+
+#cabecera div{
+float: right;
+margin-bottom: 5px;
+background-color: white;
+
+}
+
+
+#menu{
+	background-color: #ef9509;
+	padding: 10px 15px;
+	margin-top: 5px;		
+}
+	
+
+#menu li {
+	display: inline-block;
+	list-style: none;
+	padding: 0px;
+}	
+
+
+#menu a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000;
+	text-decoration: none;
+	font-size: 0.9em;
+	display: block;
+	padding: 6px;
+	float: left;
+	
+}	
+
+
+a:hover {
+	color: #FFF;
+	background-color: #666;
+}
+
+#contenido{
+	float: left;
+	width: 660px;
+	margin: 20px;
+}
+
+
+#columna{
+	float: left;
+	width: 220px;
+	background-color: #90EE90;
+	margin:20px 0px;
+	padding:20px;
+}
+
+
+#pie{
+	clear: both;
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid #999999;
+}
+
+
+.activo {
+	font-weight: bold;
+}
+
+
+.impar {
+	background-color: #90EE90;
+	
+}
+
+
+.par {
+	background-color: #5ACC5A;
+}	
+
+
+#marcos{
+	float: left;
+	width: 150px;
+	height: 150px;
+	border-style: solid;
+	border-color: #90EE90;
+	border-width: 2px;
+	background-color: #90EE90;
+	margin: 5px;
+}
+
+#recetas li{
+	display: inline-block;
+	list-style: none;
+	padding: 0px;
+}
+
+img{
+	width: 100px;
+	height: 100px;
+
+}

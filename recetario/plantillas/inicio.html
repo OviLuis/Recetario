@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% comment %} Django es muy bueno {% endcomment %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block style_css %}{% endblock %}
+
+{% block encabezado %}{% endblock %}
+
+{% block contenido %}
+	<!--<p>
+		Actualmente tenemos registradas :
+		{% with total=recetas.count %}
+			{{total}} recetas{{total|pluralize}}
+		{% endwith %}
+	</p>-->
+		<ul>
+			{% for dato in recetas %}
+			<!--<p class="{% cycle 'impar' 'par'%}">{{dato.titulo}}</p>-->
+			<div id="marcos">
+				<p>{{dato.titulo}}</p>
+				<img src='{{MEDIA_URL}}{{dato.imagen}}'/>
+			</div>
+			{% empty %}
+			No hay recetas registradas aun.
+			{% endfor %}
+		</ul>
+		
+	
+{% endblock %}

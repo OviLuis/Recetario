@@ -1,0 +1,14 @@
+{% extends  'base.html' %}
+{% block titulo %}Bienvenido{% endblock %}
+{% block encabezado %}
+	<h1>Bienvenido</h1>
+{% endblock %}
+{% block contenido %}
+	<p>Bienvenido{{usuario.username|upper}}
+		la ultima vez que vimos por aqui te fue el {{usuario.last_login}}.</p>
+	<p>Eres miemdro desde el {{usuario.date_joined}}</p>
+	<a href="/cerrar" >cerrar sesion </a>
+	
+{% endblock %}
+
+

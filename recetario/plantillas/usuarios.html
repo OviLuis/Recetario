@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Usuarios registrados {% endblock %}
+
+
+{% if usuario.is_authenticated %}
+		<p>{{usuario.username}}</p>
+	<a href="/cerrar" >cerrar sesion </a>
+	{% else %}
+	<a href='/ingresar'>Iniciar sesion</a>	
+	{% endif %}	
+
+{% block encabezado %}
+	<h1>Colaboradores</h1>
+{% endblock%}
+
+{% block contenido %}
+<ul>
+	{% for dato in usuario %}
+	<li>{{dato.username|capfirst}}-<em>{{dato.email}}</em>	
+		<ul>
+			{% for item in recetas %}
+				{% if item.usuario == dato %}
+					<li>{{item}}</li>				
+				{% endif %}
+			{% empty %}
+				<li>Este usuario aun no ha registrado recetas.</li>			
+			{% endfor %}
+			
+		</ul>
+	</li>		
+	{% empty %}
+	<li>No hay usuarios registrados, aun</li>
+	{% endfor %}
+</ul>
+
+<a href="/usuario/nuevo" > Agregar un Usuario </a>
+
+{% endblock %}

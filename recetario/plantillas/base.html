@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Recetario - {% block titulo %}{% endblock %}</title>
+	
+	<link rel="stylesheet" href="{{STATIC_URL}}css/base.css">
+	<link rel="shortcut icon " href="{{STATIC_URL}}img/icono.png">
+	{% block style_css %}{% endblock %}
+	<script src="{{STATIC_URL}}js/jquery-1.7.2.min.js"></script>
+	<script src="{{STATIC_URL}}js/demo.js"></script>
+</head>
+<body> 
+	<div id="contenedor">
+		<header id="cabecera">
+		<figure>
+			<img src="{{STATIC_URL}}img/web_logo.png" alt="logo-recetas"  class= "logo"/>
+		</figure>
+		
+		<h1>Recetario de mi Abuela</h1>		
+		
+		
+		
+		{% if usuario.is_authenticated %}
+		<p>{{usuario.username}}</p>
+	<a href="/cerrar" >cerrar sesion </a>
+	{% else %}
+	<a href='/ingresar'>Iniciar sesion</a>	
+	<a href="nuevousuario">Registrarme</a>
+	{% endif %}	
+	</header>
+	
+	
+	<nav id="menu">
+		<ul>
+			<li><a href='/'>Inicio</a></li>
+			<!--<li><a href='/usuarios' >Usuarios registrados</a></li>-->
+			<li><a href='/recetas' >Recetas</a></li>
+			<!--<a href='/comenta'> Comentarios</a>-->
+			<li><a href='/contacto'>Contactenos</a></li>
+			<li><a href='/sobre'>Acerca de Nosotros</a></li>				
+		</ul>				
+	</nav>
+	
+	
+		
+		
+	
+	<section id='contenido'>
+		<div id="content"> 
+			{% block encabezado %}{% endblock %}		
+			{% block contenido %}{% endblock %}
+			
+		</div>
+	</section>
+	<aside id="columna">
+		<div id="todas">
+			<blockquote><a href="/recetas" >Ver todas las recetas</a></blockquote>
+				
+		</div><br>
+		<div id="busqueda">			
+			<blockquote><input id="search" value="hola"/></blockquote>
+		</div><br>
+		<blockquote>Interes</blockquote>
+		
+		
+	</aside>
+	<footer id="pie">
+		<p>Proyecto de ejemplo para el curso de Django &copy;2014</p>
+	</footer>	
+	</div>
+	
+	
+</body>
+</html>
